@@ -1,6 +1,12 @@
 import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
 import ProjectCard from "../Components/ProjectCard";
+import shopC from  "../assets/shop-C.png";
+import shopS from  "../assets/shop-S.png";
+import todoC from  "../assets/Todo-App-C.png";
+import todoS from  "../assets/Todo-App-S.png";
+import voyageC from  "../assets/voyage-C.png";
+import voyageS from  "../assets/voyage-S.png";
 
 const Projects: React.FC = () => {
   const { ref, visible } = useFadeIn<HTMLDivElement>();
@@ -9,21 +15,21 @@ const Projects: React.FC = () => {
     {
       title: "Todo App",
       description: "Une application interactive pour gérer les tâches quotidiennes.",
-      imageLight: "/projects/Todo-App-C.png",
-      imageDark: "/projects/Todo-App-S.png",
+      imageLight: todoC,
+      imageDark: todoS,
       href: "https://teds81.github.io/Todo_app"
     },
     {
       title: "Clonage site de voyage",
       description: "Clonage d’un site avec responsive design.",
-      imageLight: "/projects/voyage-C.png",
-      imageDark: "/projects/voyage-S.png",
+      imageLight: voyageC,
+      imageDark: voyageS,
     },
     {
       title: "Site e-commerce",
       description: "Site de tendances masculine et féminine.",
-      imageLight: "/projects/shop-C.png",
-      imageDark: "/projects/shop-S.png",
+      imageLight: shopC,
+      imageDark: shopS,
     },
   ];
 

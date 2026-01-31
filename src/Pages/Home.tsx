@@ -1,5 +1,6 @@
 import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
+import img from "../assets/teds.png";
 
 const Home: React.FC = () => {
   const textFade = useFadeIn<HTMLDivElement>();
@@ -19,7 +20,7 @@ const Home: React.FC = () => {
           Bonjour, je suis <span className="text-yellow-400">RANDRIANARISOA Zoniaina Teddy</span>
         </h1>
         <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl leading-relaxed">
-          Développeur Web Junior | Front-end & Back-end.   
+          Développeur Web Junior | Front-end & Back-end.
           Je crée des applications modernes, intuitives et esthétiques, prêtes pour un environnement professionnel.
         </p>
 
@@ -48,7 +49,7 @@ const Home: React.FC = () => {
         }`}
       >
         <img
-          src="/teds.png"
+          src={img}
           alt="Ma photo"
           className="w-48 md:w-72 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
         />

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../assets/logo.png";
 
 type HeaderProps = {
   darkMode: boolean;
@@ -22,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, setDarkMode }) => {
 
         {/* Logo + Nom */}
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Logo" className="w-10 h-10 rounded-full" />
+          <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" />
           <h1 className="text-xl font-bold">
             RANDRIANARISOA <span className="text-yellow-400">Zoniaina Teddy</span>
           </h1>
