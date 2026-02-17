@@ -3,22 +3,21 @@ import React from "react";
 type ProjectCardProps = {
   title: string;
   description: string;
-  imageLight: string;
-  imageDark: string;
+  image: string;
   href?: string;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
-  imageLight,
-  imageDark,
+  image,
   href,
 }) => {
   return (
     <a
       href={href || "#"}
       target="_blank"
+      rel="noopener noreferrer"
       className="
         block
         bg-gray-100 dark:bg-zinc-900
@@ -30,17 +29,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         hover:-translate-y-1 hover:shadow-lg
       "
     >
-      {/* Image */}
-      <div className="relative h-48 w-full">
+      {/* Image avec fond visible en mode sombre */}
+      <div className="relative h-48 w-full bg-gray-100 dark:bg-gray-800/50">
         <img
-          src={imageLight}
+          src={image}
           alt={title}
-          className="w-full h-full object-cover block dark:hidden"
-        />
-        <img
-          src={imageDark}
-          alt={title}
-          className="w-full h-full object-cover hidden dark:block"
+          className="w-full h-full object-cover"
         />
       </div>
 

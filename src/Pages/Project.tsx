@@ -1,35 +1,37 @@
 import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
 import ProjectCard from "../Components/ProjectCard";
-import shopC from  "../assets/shop-C.png";
-import shopS from  "../assets/shop-S.png";
-import todoC from  "../assets/Todo-App-C.png";
-import todoS from  "../assets/Todo-App-S.png";
-import voyageC from  "../assets/voyage-C.png";
-import voyageS from  "../assets/voyage-S.png";
+import todoC from "../assets/Todo-App-C.png";
+import voyageC from "../assets/voyage-C.png";
+import CTmotors from "../assets/CTmotors.png";
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  href?: string;
+}
 
 const Projects: React.FC = () => {
   const { ref, visible } = useFadeIn<HTMLDivElement>();
 
-  const projects = [
+  const projects: Project[] = [
     {
       title: "Todo App",
       description: "Une application interactive pour gérer les tâches quotidiennes.",
-      imageLight: todoC,
-      imageDark: todoS,
-      href: "https://teds81.github.io/Todo_app"
+      image: todoC,
+      href: "https://teds81.github.io/Todo_app",
     },
     {
       title: "Clonage site de voyage",
       description: "Clonage d’un site avec responsive design.",
-      imageLight: voyageC,
-      imageDark: voyageS,
+      image: voyageC,
     },
     {
-      title: "Site e-commerce",
-      description: "Site de tendances masculine et féminine.",
-      imageLight: shopC,
-      imageDark: shopS,
+      title: "Site web de CT Motors",
+      description: "Site web vitrine interactif pour CT Motors.",
+      image: CTmotors,
+      href: "https://CTmotors.mg",
     },
   ];
 
@@ -51,14 +53,12 @@ const Projects: React.FC = () => {
             key={index}
             title={project.title}
             description={project.description}
-            imageLight={project.imageLight}
-            imageDark={project.imageDark}
+            image={project.image}
             href={project.href}
           />
         ))}
       </div>
     </section>
-
   );
 };
 
