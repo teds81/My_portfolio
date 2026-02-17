@@ -26,6 +26,7 @@ const Projects: React.FC = () => {
       title: "Clonage site de voyage",
       description: "Clonage d’un site avec responsive design.",
       image: voyageC,
+      href: "https://teds81.github.io/clone_Jacaranda",
     },
     {
       title: "Site web de CT Motors",
