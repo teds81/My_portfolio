@@ -3,7 +3,7 @@ import useFadeIn from "../Hooks/useFadeIn";
 import ProjectCard from "../Components/ProjectCard";
 import todoC from "../assets/Todo-App-C.png";
 import voyageC from "../assets/voyage-C.png";
-import CTmotors from "../assets/CTmotors.png";
+import Kymco from "../assets/kymco.png";
 
 interface Project {
   title: string;
@@ -29,10 +29,10 @@ const Projects: React.FC = () => {
       href: "https://teds81.github.io/clone_Jacaranda",
     },
     {
-      title: "Site web de CT Motors",
-      description: "Site web vitrine interactif pour CT Motors.",
-      image: CTmotors,
-      href: "https://CTmotors.mg",
+      title: "Site web de Kymco",
+      description: "Site web vitrine interactif pour kymco.",
+      image: Kymco,
+      href: "https://kymco.mg",
     },
   ];
 

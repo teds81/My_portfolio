@@ -29,7 +29,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         hover:-translate-y-1 hover:shadow-lg
       "
     >
-      {/* Image avec fond visible en mode sombre */}
       <div className="relative h-48 w-full bg-gray-100 dark:bg-gray-800/50">
         <img
           src={image}
@@ -38,7 +37,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       </div>
 
-      {/* Contenu */}
       <div className="p-5">
         <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">
           {title}

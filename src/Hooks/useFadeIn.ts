@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
 
-//accepte n'importe quel élément HTML
 const useFadeIn = <T extends HTMLElement>() => {
   const ref = useRef<T>(null);
   const [visible, setVisible] = useState(false);
