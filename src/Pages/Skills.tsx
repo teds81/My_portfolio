@@ -1,6 +1,6 @@
 import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPhp, FaGit, FaGithub, FaWordpress, FaFigma } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPhp, FaGit, FaGithub, FaWordpress, FaFigma, FaNodeJs, FaServer, FaDatabase } from "react-icons/fa";
 import { SiTypescript, SiMysql, SiTailwindcss, SiVite } from "react-icons/si";
 
 const skills = [
@@ -10,9 +10,12 @@ const skills = [
   { icon: <FaReact size={40} className="text-blue-400" />, name: "React", desc: "SPA et composants" },
   { icon: <SiTypescript size={40} className="text-blue-600" />, name: "TypeScript", desc: "Typage sécurisé" },
   { icon: <SiTailwindcss size={40} className="text-teal-500" />, name: "TailwindCSS", desc: "UI moderne et rapide" },
-  { icon: <SiVite size={40} className="text-pink-500" />, name: "Vite", desc: "Build tool ultra-rapide" }, // Ajout de Vite
+  { icon: <SiVite size={40} className="text-pink-500" />, name: "Vite", desc: "Build tool ultra-rapide" },
   { icon: <FaPhp size={40} className="text-purple-600" />, name: "PHP", desc: "Back-end web" },
-  { icon: <SiMysql size={40} className="text-blue-700" />, name: "MySQL", desc: "Base de données" },
+  { icon: <SiMysql size={40} className="text-blue-700" />, name: "MySQL", desc: "Base de données relationnelles" },
+  { icon: <FaNodeJs size={40} className="text-green-600" />, name: "Node.js", desc: "Environnement d'exécution JS" },
+  { icon: <FaServer size={40} className="text-gray-800 dark:text-gray-200" />, name: "Express.js", desc: "Framework backend" },
+  { icon: <FaDatabase size={40} className="text-yellow-600" />, name: "API REST", desc: "Communication client-serveur" },
   { icon: <FaGit size={40} className="text-orange-500" />, name: "Git", desc: "Gestion de version" },
   { icon: <FaGithub size={40} className="text-gray-900 dark:text-gray-100" />, name: "GitHub", desc: "Dépôts et projets" },
   { icon: <FaWordpress size={40} className="text-blue-700" />, name: "WordPress", desc: "CMS & sites web" },
