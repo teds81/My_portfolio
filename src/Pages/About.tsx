@@ -18,9 +18,9 @@ const About: React.FC = () => {
         À propos de moi
       </h2>
       <p className="text-gray-900 dark:text-gray-100 leading-relaxed">
-        Bonjour ! Je suis Zoniaina Teddy RANDRIANARISOA, développeur Fullstack junior passionné par la conception d'expériences web modernes et performantes.
+        Bonjour ! Je suis Zoniaina Teddy RANDRIANARISOA, développeur Fullstack junior passionné par la conception d'expériences web modernes et performantes. <br /><br />
 
-        Diplômé en développement web , je maîtrise l'intégralité du cycle de création, de l'interface utilisateur avec React et Tailwind à la mise en place de services back-end robustes avec Node.js, Express et API REST. Expert WordPress, je combine rigueur technique et résolution de problèmes pour transformer vos idées en solutions digitales évolutives.
+        Diplômé en développement web , je maîtrise l'intégralité du cycle de création, de l'interface utilisateur avec React et Tailwind à la mise en place de services back-end robustes avec Node.js, Express et API REST. Expert WordPress, je combine rigueur technique et résolution de problèmes pour transformer vos idées en solutions digitales évolutives.<br /><br />
 
         En veille technologique constante, je suis toujours en quête de nouveaux défis pour apprendre et contribuer activement au succès des projets en équipe.
       </p>
