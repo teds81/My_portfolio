@@ -7,7 +7,9 @@ const Home: React.FC = () => {
   const photoFade = useFadeIn<HTMLDivElement>();
 
   return (
-    <section className="pt-20 px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+    <section
+    id="home"
+    className="pt-20 px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
       {/* Texte */}
       <div

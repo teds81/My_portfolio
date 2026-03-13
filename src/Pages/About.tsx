@@ -7,6 +7,7 @@ const About: React.FC = () => {
 
   return (
     <section
+      id="about"
       ref={ref}
       className={`fade-section px-4 max-w-5xl mx-auto transition-all duration-1000 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
