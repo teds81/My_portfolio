@@ -8,10 +8,10 @@ const Home: React.FC = () => {
 
   return (
     <section
-    id="home"
-    className="pt-20 px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      id="home"
+      className="pt-20 px-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10"
+    >
 
-      {/* Texte */}
       <div
         ref={textFade.ref}
         className={`flex-1 space-y-6 transition-all duration-1000 ${
@@ -26,7 +26,6 @@ const Home: React.FC = () => {
           Je crée des applications modernes, intuitives et esthétiques, prêtes pour un environnement professionnel.
         </p>
 
-        {/* CTA Buttons */}
         <div className="flex flex-wrap gap-4">
           <a
             href="#projects"
@@ -43,7 +42,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Photo */}
       <div
         ref={photoFade.ref}
         className={`flex-1 flex justify-center md:justify-end transition-all duration-1000 ${
