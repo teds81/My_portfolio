@@ -1,14 +1,13 @@
-import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPhp, FaGit, FaGithub, FaWordpress, FaFigma, FaNodeJs, FaServer, FaDatabase } from "react-icons/fa";
-import { SiTypescript, SiMysql, SiTailwindcss, SiVite } from "react-icons/si";
+import { SiTypescript, SiMysql, SiTailwindcss, SiVite, SiElementor, SiWoocommerce, SiCanva } from "react-icons/si";
 
 const skills = [
   { icon: <FaHtml5 size={40} className="text-orange-600" />, name: "HTML5", desc: "Structure et sémantique web" },
   { icon: <FaCss3Alt size={40} className="text-blue-600" />, name: "CSS3", desc: "Styles modernes et responsive" },
   { icon: <FaJs size={40} className="text-yellow-400" />, name: "JavaScript", desc: "Interactivité et DOM" },
-  { icon: <FaReact size={40} className="text-blue-400" />, name: "React", desc: "SPA et composants" },
   { icon: <SiTypescript size={40} className="text-blue-600" />, name: "TypeScript", desc: "Typage sécurisé" },
+  { icon: <FaReact size={40} className="text-blue-400" />, name: "React", desc: "SPA et composants" },
   { icon: <SiTailwindcss size={40} className="text-teal-500" />, name: "TailwindCSS", desc: "UI moderne et rapide" },
   { icon: <SiVite size={40} className="text-pink-500" />, name: "Vite", desc: "Build tool ultra-rapide" },
   { icon: <FaPhp size={40} className="text-purple-600" />, name: "PHP", desc: "Back-end web" },
@@ -16,14 +15,17 @@ const skills = [
   { icon: <FaNodeJs size={40} className="text-green-600" />, name: "Node.js", desc: "Environnement d'exécution JS" },
   { icon: <FaServer size={40} className="text-gray-800 dark:text-gray-200" />, name: "Express.js", desc: "Framework backend" },
   { icon: <FaDatabase size={40} className="text-yellow-600" />, name: "API REST", desc: "Communication client-serveur" },
+  { icon: <FaWordpress size={40} className="text-blue-700" />, name: "WordPress", desc: "CMS & gestion de sites" },
+  { icon: <SiElementor size={40} className="text-pink-600" />, name: "Elementor", desc: "Création de pages visuelle" },
+  { icon: <SiWoocommerce size={40} className="text-purple-700" />, name: "WooCommerce", desc: "Sites e-commerce" },
   { icon: <FaGit size={40} className="text-orange-500" />, name: "Git", desc: "Gestion de version" },
   { icon: <FaGithub size={40} className="text-gray-900 dark:text-gray-100" />, name: "GitHub", desc: "Dépôts et projets" },
-  { icon: <FaWordpress size={40} className="text-blue-700" />, name: "WordPress", desc: "CMS & sites web" },
   { icon: <FaFigma size={40} className="text-pink-500" />, name: "Figma", desc: "Design UI/UX" },
+  { icon: <SiCanva size={40} className="text-cyan-500" />, name: "Canva", desc: "Création de visuels" },
 ];
 
-const Skills: React.FC = () => {
-  const { ref, visible } = useFadeIn();
+const Skills = () => {
+  const { ref, visible } = useFadeIn<HTMLDivElement>();
 
   return (
     <section

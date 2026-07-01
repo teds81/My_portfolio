@@ -1,10 +1,9 @@
-import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
 import img from "../assets/teds.png";
 
-const Home: React.FC = () => {
-  const textFade = useFadeIn<HTMLDivElement>();
-  const photoFade = useFadeIn<HTMLDivElement>();
+const Home = () => {
+  const { ref: textRef, visible: textVisible } = useFadeIn<HTMLDivElement>();
+  const { ref: photoRef, visible: photoVisible } = useFadeIn<HTMLDivElement>();
 
   return (
     <section
@@ -13,17 +12,19 @@ const Home: React.FC = () => {
     >
 
       <div
-        ref={textFade.ref}
+        ref={textRef}
         className={`flex-1 space-y-6 transition-all duration-1000 ${
-          textFade.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          textVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <h1 className="text-4xl md:text-5xl font-bold text-blue-500">
           Bonjour, je suis <span className="text-yellow-400">RANDRIANARISOA Zoniaina Teddy</span>
         </h1>
         <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl leading-relaxed">
-          Développeur Web Junior | Front-end & Back-end.
-          Je crée des applications modernes, intuitives et esthétiques, prêtes pour un environnement professionnel.
+          <span className="text-yellow-400 font-semibold">Webmaster</span> &{" "}
+          <span className="text-yellow-400 font-semibold">Développeur Web</span>, avec des
+          compétences en Design (Figma, Canva). Je crée des sites vitrines, e-commerce et
+          applications sur mesure, modernes et esthétiques.
         </p>
 
         <div className="flex flex-wrap gap-4">
@@ -43,9 +44,9 @@ const Home: React.FC = () => {
       </div>
 
       <div
-        ref={photoFade.ref}
+        ref={photoRef}
         className={`flex-1 flex justify-center md:justify-end transition-all duration-1000 ${
-          photoFade.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          photoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
         <img

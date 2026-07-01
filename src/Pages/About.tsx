@@ -1,9 +1,7 @@
-import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
 
-
-const About: React.FC = () => {
-  const { ref, visible } = useFadeIn();
+const About = () => {
+  const { ref, visible } = useFadeIn<HTMLDivElement>();
 
   return (
     <section
@@ -18,11 +16,19 @@ const About: React.FC = () => {
         À propos de moi
       </h2>
       <p className="text-gray-900 dark:text-gray-100 leading-relaxed">
-        Bonjour ! Je suis Zoniaina Teddy RANDRIANARISOA, développeur Fullstack junior passionné par la conception d'expériences web modernes et performantes. <br /><br />
+        Bonjour ! Je suis Zoniaina Teddy RANDRIANARISOA,{" "}
+        <span className="text-yellow-500 font-semibold">Webmaster</span> &{" "}
+        <span className="text-yellow-500 font-semibold">Développeur Web</span>, passionné par la
+        création et la gestion de sites web modernes, performants et esthétiques. <br /><br />
 
-        Diplômé en développement web , je maîtrise l'intégralité du cycle de création, de l'interface utilisateur avec React et Tailwind à la mise en place de services back-end robustes avec Node.js, Express et API REST. Expert WordPress, je combine rigueur technique et résolution de problèmes pour transformer vos idées en solutions digitales évolutives.<br /><br />
+        Je gère l'ensemble du cycle de vie d'un site : conception, développement, mise en ligne
+        et maintenance. Expert WordPress (Elementor, WooCommerce), je maîtrise aussi le
+        développement sur mesure avec React, TypeScript et Tailwind CSS. Je complète ces
+        compétences par des bases solides en Design (Figma, Canva) pour créer des interfaces
+        cohérentes et attractives.<br /><br />
 
-        En veille technologique constante, je suis toujours en quête de nouveaux défis pour apprendre et contribuer activement au succès des projets en équipe.
+        En veille technologique constante, je suis toujours en quête de nouveaux défis pour
+        apprendre et contribuer activement au succès des projets.
       </p>
     </section>
   );

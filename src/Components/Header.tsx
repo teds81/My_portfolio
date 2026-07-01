@@ -6,7 +6,7 @@ type HeaderProps = {
   setDarkMode: (val: boolean) => void;
 };
 
-const Header: React.FC<HeaderProps> = ({ darkMode, setDarkMode }) => {
+const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [

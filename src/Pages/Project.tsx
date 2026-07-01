@@ -1,9 +1,9 @@
-import React from "react";
 import useFadeIn from "../Hooks/useFadeIn";
 import ProjectCard from "../Components/ProjectCard";
 import todoC from "../assets/Todo-App-C.png";
 import voyageC from "../assets/voyage-C.png";
-import Kymco from "../assets/kymco.webp";
+import ideaBC from "../assets/idea.jpeg";
+import soaranty from "../assets/soaranty.webp";
 
 interface Project {
   title: string;
@@ -12,7 +12,7 @@ interface Project {
   href?: string;
 }
 
-const Projects: React.FC = () => {
+const Projects = () => {
   const { ref, visible } = useFadeIn<HTMLDivElement>();
 
   const projects: Project[] = [
@@ -24,15 +24,21 @@ const Projects: React.FC = () => {
     },
     {
       title: "Clonage site de voyage",
-      description: "Clonage d’un site avec responsive design.",
+      description: "Clonage d'un site avec responsive design.",
       image: voyageC,
       href: "https://teds81.github.io/clone_Jacaranda",
     },
     {
-      title: "Site web de Kymco",
-      description: "Site web vitrine interactif pour kymco.",
-      image: Kymco,
-      href: "https://kymco.mg",
+      title: "Site web IDEA BC",
+      description: "Site vitrine créé avec WordPress et Elementor.",
+      image: ideaBC,
+      href: "https://e-ideagency.com",
+    },
+    {
+      title: "Soaranty",
+      description: "Site e-commerce réalisé avec WordPress, Elementor et WooCommerce.",
+      image: soaranty,
+      href: "https://soaranty-srty.com",
     },
   ];
 

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import { useState, type FormEvent } from "react";
 import useFadeIn from "../Hooks/useFadeIn";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-const Contact: React.FC = () => {
-  const { ref, visible } = useFadeIn();
+const Contact = () => {
+  const { ref, visible } = useFadeIn<HTMLDivElement>();
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);

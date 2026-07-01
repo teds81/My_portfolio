@@ -1,5 +1,3 @@
-import React from "react";
-
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -7,12 +5,12 @@ type ProjectCardProps = {
   href?: string;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard = ({
   title,
   description,
   image,
   href,
-}) => {
+}: ProjectCardProps) => {
   return (
     <a
       href={href || "#"}
