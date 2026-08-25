@@ -1,9 +1,14 @@
 import { useState, type FormEvent } from "react";
 import useFadeIn from "../Hooks/useFadeIn";
-import { MdEmail, MdPhone } from "react-icons/md";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../i18n/translations";
+import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Contact = () => {
+  const { lang } = useLanguage();
+  const t = translations[lang].contact;
+
   const { ref, visible } = useFadeIn<HTMLDivElement>();
   const [submitted, setSubmitted] = useState(false);
 
@@ -22,7 +27,7 @@ const Contact = () => {
       setSubmitted(true);
       form.reset();
     } else {
-      alert("Une erreur est survenue, veuillez réessayer.");
+      alert(t.error);
     }
   };
 
@@ -30,108 +35,110 @@ const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className={`fade-section scroll-mt-12 py-16 px-4 max-w-5xl mx-auto transition-all duration-1000 ${
+      className={`scroll-mt-24 py-16 px-6 max-w-6xl mx-auto transition-all duration-1000 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      } text-gray-900 dark:text-gray-100`}
+      }`}
     >
-      <h2 className="text-3xl text-yellow-500 font-bold mb-8 border-b-2 border-yellow-500 inline-block pb-2">
-        Contactez-moi
+      <span className="block text-[11px] font-semibold uppercase tracking-widest text-[#ff6b5b] dark:text-[#34d399] mb-3">
+        {t.badge}
+      </span>
+      <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+        {t.title}
       </h2>
 
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Formulaire */}
-        <div className="flex-1 bg-gray-200 dark:bg-zinc-800 p-6 rounded-lg shadow-md">
+        <div className="flex-1 bg-white dark:bg-zinc-800/60 border border-gray-200 dark:border-zinc-700 p-6 rounded-xl">
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            {/* Nom */}
-            <label className="flex flex-col text-gray-900 dark:text-gray-100 font-medium">
-              Nom
+            <label className="flex flex-col text-gray-900 dark:text-gray-100 font-medium text-sm">
+              {t.labels.name}
               <input
                 type="text"
                 name="name"
-                className="mt-1 p-3 rounded border border-gray-300 dark:border-zinc-700
-                  bg-gray-100 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                className="mt-1.5 p-3 rounded border border-gray-300 dark:border-zinc-700
+                  bg-gray-50 dark:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#ff6b5b] dark:focus:ring-[#34d399] transition"
                 required
               />
             </label>
 
-            {/* Email */}
-            <label className="flex flex-col text-gray-900 dark:text-gray-100 font-medium">
-              Email
+            <label className="flex flex-col text-gray-900 dark:text-gray-100 font-medium text-sm">
+              {t.labels.email}
               <input
                 type="email"
                 name="email"
-                className="mt-1 p-3 rounded border border-gray-300 dark:border-zinc-700
-                  bg-gray-100 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                className="mt-1.5 p-3 rounded border border-gray-300 dark:border-zinc-700
+                  bg-gray-50 dark:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#ff6b5b] dark:focus:ring-[#34d399] transition"
                 required
               />
             </label>
 
-            {/* Message */}
-            <label className="flex flex-col text-gray-900 dark:text-gray-100 font-medium">
-              Message
+            <label className="flex flex-col text-gray-900 dark:text-gray-100 font-medium text-sm">
+              {t.labels.message}
               <textarea
                 name="message"
                 rows={5}
-                className="mt-1 p-3 rounded border border-gray-300 dark:border-zinc-700
-                  bg-gray-100 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition resize-none"
+                className="mt-1.5 p-3 rounded border border-gray-300 dark:border-zinc-700
+                  bg-gray-50 dark:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-[#ff6b5b] dark:focus:ring-[#34d399] transition resize-none"
                 required
               />
             </label>
 
             <button
               type="submit"
-              className="bg-yellow-500 text-gray-900 font-semibold py-3 rounded hover:bg-yellow-400 transition mt-2"
+              className="bg-[#ff6b5b] dark:bg-[#34d399] text-white dark:text-[#052e21] font-semibold py-3 rounded hover:opacity-90 transition mt-2"
             >
-              Envoyer
+              {t.submit}
             </button>
 
-            {/* Message de confirmation */}
             {submitted && (
-              <p className="text-green-500 mt-2 font-medium">
-                Merci, votre message a été envoyé !
+              <p className="text-[#ff6b5b] dark:text-[#34d399] mt-2 font-medium text-sm">
+                {t.success}
               </p>
             )}
           </form>
         </div>
 
-        {/* Infos de contact */}
         <div className="flex-1 flex flex-col gap-4 justify-start">
-          <div className="flex items-center gap-2">
-            <MdEmail className="text-yellow-500" size={24} />
-            <span>Email: zoniainateddy@gmail.com</span>
+          <div className="flex items-center gap-3 bg-white dark:bg-zinc-800/60 border border-gray-200 dark:border-zinc-700 rounded-lg p-4">
+            <MdEmail className="text-[#ff6b5b] dark:text-[#34d399] shrink-0" size={22} />
+            <span className="text-sm text-gray-700 dark:text-gray-300">{t.info.email} zoniainateddy@gmail.com</span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <MdPhone className="text-yellow-500" size={24} />
-            <span>Téléphone: +261 38 76 862 57</span>
+          <div className="flex items-center gap-3 bg-white dark:bg-zinc-800/60 border border-gray-200 dark:border-zinc-700 rounded-lg p-4">
+            <MdPhone className="text-[#ff6b5b] dark:text-[#34d399] shrink-0" size={22} />
+            <span className="text-sm text-gray-700 dark:text-gray-300">{t.info.phone} +261 38 76 862 57</span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <FaLinkedin className="text-blue-700" size={24} />
-            <span>
-              LinkedIn:{" "}
+          <div className="flex items-center gap-3 bg-white dark:bg-zinc-800/60 border border-gray-200 dark:border-zinc-700 rounded-lg p-4">
+            <MdLocationOn className="text-[#ff6b5b] dark:text-[#34d399] shrink-0" size={22} />
+            <span className="text-sm text-gray-700 dark:text-gray-300">Lot II J 91 L A bis Ivandry, Antananarivo</span>
+          </div>
+
+          <div className="flex items-center gap-3 bg-white dark:bg-zinc-800/60 border border-gray-200 dark:border-zinc-700 rounded-lg p-4">
+            <FaLinkedin className="text-[#ff6b5b] dark:text-[#34d399] shrink-0" size={22} />
+            <span className="text-sm text-gray-700 dark:text-gray-300">
+              {t.info.linkedin}{" "}
               <a
                 href="https://www.linkedin.com/in/zoniaina-teddy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-yellow-500 hover:text-yellow-400"
+                className="text-[#ff6b5b] dark:text-[#34d399] font-medium hover:underline"
               >
-                Voir mon profil LinkedIn
+                {t.info.linkedinCta}
               </a>
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <FaGithub className="text-gray-700" size={24} />
-            <span>
-              GitHub:{" "}
+          <div className="flex items-center gap-3 bg-white dark:bg-zinc-800/60 border border-gray-200 dark:border-zinc-700 rounded-lg p-4">
+            <FaGithub className="text-[#ff6b5b] dark:text-[#34d399] shrink-0" size={22} />
+            <span className="text-sm text-gray-700 dark:text-gray-300">
+              {t.info.github}{" "}
               <a
                 href="https://github.com/teds81"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-yellow-500 hover:text-yellow-400"
+                className="text-[#ff6b5b] dark:text-[#34d399] font-medium hover:underline"
               >
-                Voir mes projets sur GitHub
+                {t.info.githubCta}
               </a>
             </span>
           </div>

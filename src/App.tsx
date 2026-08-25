@@ -6,15 +6,12 @@ import About from "./Pages/About";
 import Skills from "./Pages/Skills";
 import Projects from "./Pages/Project";
 import Contact from "./Pages/Contact";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  // Dark mode avec localStorage
-  useEffect(() => {
-    const stored = localStorage.getItem("darkMode");
-    if (stored === "true") setDarkMode(true);
-  }, []);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "true";
+  });
 
   useEffect(() => {
     if (darkMode) {
@@ -27,17 +24,19 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 scroll-smooth">
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="pt-20 space-y-16 md:space-y-24">
-        <Home />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="bg-gray-100 dark:bg-zinc-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 scroll-smooth">
+        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+        <main className="pt-20 space-y-16 md:space-y-24">
+          <Home />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 
