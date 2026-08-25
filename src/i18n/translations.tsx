@@ -27,7 +27,7 @@ export const translations = {
       role1: 'Webmaster',
       role2: 'Développeur Web',
       paragraph1: ', passionné par la création et la gestion de sites web modernes, performants et esthétiques.',
-      paragraph2: "Je gère l'ensemble du cycle de vie d'un site : conception, développement, mise en ligne et maintenance. Expert WordPress (Elementor, WooCommerce), je maîtrise aussi le développement sur mesure avec React, TypeScript et Tailwind CSS. Je complète ces compétences par des bases solides en Design (Figma, Canva) pour créer des interfaces cohérentes et attractives.",
+      paragraph2: "Je gère l'ensemble du cycle de vie d'un site : conception, développement, migration (changement d'hébergement, DNS), mise en ligne et maintenance. Expert WordPress (Elementor, WooCommerce), je maîtrise aussi le développement sur mesure avec React, TypeScript et Tailwind CSS. Je complète ces compétences par des bases solides en Design (Figma, Canva) pour créer des interfaces cohérentes et attractives.",
       paragraph3: 'En veille technologique constante, je suis toujours en quête de nouveaux défis pour apprendre et contribuer activement au succès des projets.',
       stats: {
         experience: "Années d'expérience",
@@ -135,7 +135,7 @@ export const translations = {
       role1: 'Webmaster',
       role2: 'Web Developer',
       paragraph1: ', passionate about building and managing modern, high-performing, visually appealing websites.',
-      paragraph2: "I handle the full lifecycle of a website: design, development, deployment and maintenance. A WordPress expert (Elementor, WooCommerce), I'm also skilled in custom development with React, TypeScript and Tailwind CSS. I complement these skills with a solid Design foundation (Figma, Canva) to create coherent, attractive interfaces.",
+      paragraph2: "I manage the entire website lifecycle: design, development, migration (hosting transfer, DNS), deployment, and maintenance. As a WordPress expert (Elementor, WooCommerce), I also build custom web applications using React, TypeScript, and Tailwind CSS. I round out these technical skills with a solid foundation in UI/UX Design (Figma, Canva) to deliver sleek, cohesive interfaces.",
       paragraph3: "Always keeping up with new technologies, I'm constantly looking for new challenges to learn and actively contribute to the success of projects.",
       stats: {
         experience: 'Years of experience',
