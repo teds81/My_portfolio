@@ -5,17 +5,20 @@ const useFadeIn = <T extends HTMLElement>() => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    // 1. Sauvegarder la référence dans une variable locale
+    const element = ref.current;
+    if (!element) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
       { threshold: 0.1 }
     );
 
-    observer.observe(ref.current);
+    observer.observe(element);
 
+    // 2. Utiliser la variable locale pour le nettoyage
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      observer.unobserve(element);
     };
   }, []);
 
