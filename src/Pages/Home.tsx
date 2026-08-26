@@ -80,7 +80,7 @@ const Home = () => {
               <div className="text-[10px] text-gray-500 dark:text-gray-400">{t.cardDev.sub}</div>
             </div>
 
-            <div className="absolute -top-5 -right-6 w-36 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg shadow-lg p-3.5 rotate-[5deg]">
+            <div className="absolute -top-10 -right-20 md:-right-8 w-36 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg shadow-lg p-3.5 rotate-[5deg]">
               <div className="text-[#ff6b5b] dark:text-[#34d399] text-lg mb-1">◎</div>
               <div className="text-xs font-semibold text-gray-900 dark:text-white">{t.cardDesign.title}</div>
               <div className="text-[10px] text-gray-500 dark:text-gray-400">{t.cardDesign.sub}</div>

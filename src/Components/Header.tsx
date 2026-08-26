@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import logo from "../assets/logo.png";
 import cv from "../assets/CV_Zoniaina_Teddy_RANDRIANARISOA.pdf";
 import { useLanguage } from "../context/LanguageContext";
@@ -68,7 +69,7 @@ const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
           </button>
 
           <button
-            className="flex flex-col w-7 h-5 justify-between items-center"
+            className="flex flex-col w-7 h-5 justify-between items-center relative z-50"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Menu"
           >
@@ -87,31 +88,51 @@ const Header = ({ darkMode, setDarkMode }: HeaderProps) => {
         </button>
       </div>
 
-      {/* Menu hamburger — uniquement les liens de navigation + CV */}
-      <nav
-        className={`md:hidden fixed top-15 right-0 h-screen w-64 bg-white dark:bg-zinc-900 border-l border-gray-200 dark:border-zinc-800 flex flex-col items-start px-6 pt-6 gap-5 transform transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        {links.map((link, idx) => (
-          <a
-            key={idx}
-            href={link.href}
+      {/*
+        Overlay + menu mobile rendus via Portal directement dans <body>.
+        Raison : le <header> a "backdrop-blur-md" (backdrop-filter), qui crée
+        un containing block pour ses descendants en position:fixed. Sans le
+        Portal, l'overlay et le nav restent coincés dans la petite boîte du
+        header au lieu de couvrir tout l'écran — d'où l'overlay invisible et
+        le clic qui ne fermait rien.
+      */}
+      {createPortal(
+        <>
+          <div
             onClick={() => setIsOpen(false)}
-            className="text-[14px] font-medium text-gray-700 dark:text-gray-300 hover:text-[#ff6b5b] dark:hover:text-[#34d399] transition-colors"
+            className={`md:hidden fixed inset-0 z-40 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${
+              isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+            }`}
+            aria-hidden="true"
+          ></div>
+
+          <nav
+            className={`md:hidden fixed top-15 right-0 h-screen w-64 bg-white dark:bg-zinc-900 border-l border-gray-200 dark:border-zinc-800 flex flex-col items-start px-6 pt-6 gap-5 transform transition-transform duration-300 z-50 ${
+              isOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           >
-            {link.label}
-          </a>
-        ))}
-        <a
-          href={cv}
-          download
-          onClick={() => setIsOpen(false)}
-          className="bg-[#ff6b5b] dark:bg-[#34d399] text-white dark:text-[#052e21] px-5 py-2.5 rounded font-semibold text-[13px] w-full text-center mt-2"
-        >
-          {t.cv}
-        </a>
-      </nav>
+            {links.map((link, idx) => (
+              <a
+                key={idx}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-[14px] font-medium text-gray-700 dark:text-gray-300 hover:text-[#ff6b5b] dark:hover:text-[#34d399] transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href={cv}
+              download
+              onClick={() => setIsOpen(false)}
+              className="bg-[#ff6b5b] dark:bg-[#34d399] text-white dark:text-[#052e21] px-5 py-2.5 rounded font-semibold text-[13px] w-full text-center mt-2"
+            >
+              {t.cv}
+            </a>
+          </nav>
+        </>,
+        document.body
+      )}
     </header>
   );
 };
