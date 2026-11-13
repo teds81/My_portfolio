@@ -67,16 +67,21 @@ export const translations = {
         canva: 'Création de visuels',
       },
     },
-    projects: {
+        projects: {
       badge: 'Projets',
       title: 'Mes projets',
       viewProject: 'Voir le projet →',
+      showMore: 'Voir plus',
+      showLess: 'Voir moins',
       items: {
         todo: 'Une application interactive pour gérer les tâches quotidiennes.',
         voyage: "Clonage d'un site avec responsive design.",
         ideabc: 'Site vitrine créé avec WordPress et Elementor.',
         portfolio: 'portfolio créer par react, typescript et tailwind css',
         soaranty: 'Site e-commerce réalisé avec WordPress, Elementor et WooCommerce.',
+        imgam: "Site web de l'Institut de Management des Arts et Métiers, avec espaces admin et étudiant. Réalisé en collaboration avec l'équipe (React, TypeScript, Tailwind CSS, Vite, Node.js, Express, MySQL).",
+        indaClub: "Application web pour INDA CLUB, société de production audiovisuelle sportive. Réalisée en collaboration avec l'équipe (React, TypeScript, Tailwind CSS, Vite, Node.js, Express, MySQL).",
+        ctmotors: "Site vitrine de CT Motors (auto, moto, SSV, quad, vélo) réalisé en collaboration avec l'équipe avec WordPress et Elementor.",
       },
     },
     contact: {
@@ -176,16 +181,21 @@ export const translations = {
         canva: 'Visual creation',
       },
     },
-    projects: {
-      badge: 'Projects',
-      title: 'My projects',
-      viewProject: 'View project →',
+        projects: {
+      badge: 'Projets',
+      title: 'Mes projets',
+      viewProject: 'Voir le projet →',
+      showMore: 'Voir plus',
+      showLess: 'Voir moins',
       items: {
-        todo: 'An interactive app to manage daily tasks.',
-        voyage: 'A cloned website with responsive design.',
-        ideabc: 'Showcase site built with WordPress and Elementor.',
-        portfolio: 'portfolio create with react, typescript and tailwind css',
-        soaranty: 'E-commerce site built with WordPress, Elementor and WooCommerce.',
+        todo: 'Une application interactive pour gérer les tâches quotidiennes.',
+        voyage: "Clonage d'un site avec responsive design.",
+        ideabc: 'Site vitrine créé avec WordPress et Elementor.',
+        portfolio: 'portfolio créer par react, typescript et tailwind css',
+        soaranty: 'Site e-commerce réalisé avec WordPress, Elementor et WooCommerce.',
+        imgam: "Site web de l'Institut de Management des Arts et Métiers, avec espaces admin et étudiant. Réalisé en collaboration avec l'équipe (React, TypeScript, Tailwind CSS, Vite, Node.js, Express, MySQL).",
+        indaClub: "Application web pour INDA CLUB, société de production audiovisuelle sportive. Réalisée en collaboration avec l'équipe (React, TypeScript, Tailwind CSS, Vite, Node.js, Express, MySQL).",
+        ctmotors: "Site vitrine de CT Motors (auto, moto, SSV, quad, vélo) réalisé en collaboration avec l'équipe avec WordPress et Elementor.",
       },
     },
     contact: {
